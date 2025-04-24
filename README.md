@@ -1,1 +1,1 @@
-# spring-ai-ollma
+# spring-ai-ollama
