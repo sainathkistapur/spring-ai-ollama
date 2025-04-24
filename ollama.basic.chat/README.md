@@ -2,7 +2,7 @@
 
 Application to demonstrate the Spring AI integration with Ollama and perform a simple chat operation.
 
-_Note: To keep the examples lightweight and easy to response we are using the simplest model "**llama3.2:3b**"_
+_**Note**: To keep the examples lightweight and easy to get quick response we are using the simplest model "**llama3.2:3b**"_
 
 ## Running the Application 
 ### Pre-requisite
