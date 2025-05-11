@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: springai.ollama.chat.observability
+
+  threads:
+    virtual:
+      enabled: true
+
+  ai:
+    ollama:
+      chat:
+        options:
+          model: llama3.2:3b
+
+  docker:
+    compose:
+      lifecycle-management: start-only
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  tracing:
+    sampling:
+      probability: 1

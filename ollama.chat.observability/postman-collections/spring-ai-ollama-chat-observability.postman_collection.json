@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "e083b31e-f414-4661-bb22-24b27076d299",
+		"name": "spring-ai-ollama-chat-observability",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Basic-Chat",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "What is a prompt "
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/basic-chat/observability",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"basic-chat",
+						"observability"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
