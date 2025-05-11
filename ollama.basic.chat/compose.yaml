@@ -23,9 +23,9 @@ services:
           sleep 2;
         done;
         echo '[ollama-init] Ollama is up!';
-        echo '[ollama-init] Pulling llama3 model...';
-        curl -X POST http://ollama:11434/api/pull -d '{\"name\": \"llama3.2:3b\"}' -H 'Content-Type: application/json';
-        echo '[ollama-init] llama3 model pull complete.';
+        echo '[ollama-init] Pulling gemma3:1b model...';
+        curl -X POST http://ollama:11434/api/pull -d '{\"name\": \"gemma3:1b\"}' -H 'Content-Type: application/json';
+        echo '[ollama-init] gemma3:1b model pull complete.';
       "
     networks:
       - app-net
@@ -37,12 +37,12 @@ services:
       - ollama
     entrypoint: >
       /bin/sh -c "
-        echo '[ollama-check] Verifying that Mistral is available...';
-        until curl -s http://ollama:11434/api/tags | grep '\"name\": \"llama3\"'; do
-          echo '[ollama-check] llama3 not found, retrying...';
+        echo '[ollama-check] Verifying that gemma3:1b is available...';
+        until curl -s http://ollama:11434/api/tags | grep '\"name\": \"gemma3\"'; do
+          echo '[ollama-check] gemma3:1b not found, retrying...';
           sleep 2;
         done;
-        echo '[ollama-check] llama3 is successfully loaded in Ollama.';
+        echo '[ollama-check] gemma3:1b is successfully loaded in Ollama.';
       "
     networks:
       - app-net
