@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "adcfc792-642a-46c8-ada1-d31dc687a0ef",
+		"name": "spring-ai-ollama-with-bean-converter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Simple-Prompt",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "List top 5 career achievements for Tom Cruise."
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/prompt/simple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"prompt",
+						"simple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prompt-With-Bean-Converter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "List top 5 career achievements for Tom Cruise."
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/prompt/simple/with-bean-converter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"prompt",
+						"simple",
+						"with-bean-converter"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

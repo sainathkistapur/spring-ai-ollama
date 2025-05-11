@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: springai.ollama.chat.advisors
+
+  threads:
+    virtual:
+      enabled: true
+
+  ai:
+    ollama:
+      chat:
+        options:
+          model: llama3.2:3b
+
+  docker:
+    compose:
+      lifecycle-management: start-only
+
