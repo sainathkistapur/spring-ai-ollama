@@ -14,4 +14,4 @@ spring:
 
   docker:
     compose:
-      lifecycle-management: START_AND_STOP
+      lifecycle-management: start-only
