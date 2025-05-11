@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "d2e4bebb-a420-472f-8872-569b9e625781",
+		"name": "spring-ai-ollama-with-map-converter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Simple-Prompt",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "List top 5 happiest countries in the world"
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/prompt/simple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"prompt",
+						"simple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prompt-With-Map-Converter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "List top 5 happiest countries in the world with their name and total population"
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/prompt/simple/with-map-converter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"prompt",
+						"simple",
+						"with-map-converter"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
