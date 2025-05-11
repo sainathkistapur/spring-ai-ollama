@@ -4,4 +4,6 @@ Repository to store all Spring AI integration with AI modals using Ollama
 ### Pre-requisite
 - Make sure you have at least 3GB of memory for Docker.
 
-**Note:** The response times could be varied depending on the system you are running the model. 
+### **Please Note:** 
+- All the module in the repository are designed to run individually. So due to docker container naming conflict make sure you run `docker-compose down` after you've finished with each module and before running the new module.
+- The response times could be varied depending on the system you are running the model. 
