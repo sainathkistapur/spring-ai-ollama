@@ -1,6 +1,6 @@
 spring:
   application:
-    name: springai.ollama.chat.advisors
+    name: springai.ollama.chat.converters.bean
 
   threads:
     virtual:
