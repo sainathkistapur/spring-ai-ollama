@@ -1,4 +1,4 @@
-# spring-ai-openai - Chat Memory - Jdbc Memory
+# spring-ai-ollama - Chat Memory - Jdbc Memory
 
 _**Note**: To keep the examples lightweight and easy to get quick response we are using the simplest model "**llama3.2:3b**"_
 

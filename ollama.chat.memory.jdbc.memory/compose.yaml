@@ -46,7 +46,7 @@ services:
       - ollama
     entrypoint: >
       /bin/sh -c "
-        echo '[ollama-check] Verifying that Mistral is available...';
+        echo '[ollama-check] Verifying that llama3 is available...';
         until curl -s http://ollama:11434/api/tags | grep '\"name\": \"llama3\"'; do
           echo '[ollama-check] llama3 not found, retrying...';
           sleep 2;
