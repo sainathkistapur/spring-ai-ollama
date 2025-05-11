@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "81579b62-3816-4d1e-b821-b9c7b5bef916",
+		"name": "spring-ai-ollma-advisors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Loggin-Advisors-Chat",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "What is chatGPT? Limit to 50 words"
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/advisors/logging",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"advisors",
+						"logging"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SafeGuard-Advisors-Chat",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Who developed computer"
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/advisors/safeguard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"advisors",
+						"safeguard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mixed-Advisors-Chat",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Who developed computer"
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/advisors/mixed-advisors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"advisors",
+						"mixed-advisors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
