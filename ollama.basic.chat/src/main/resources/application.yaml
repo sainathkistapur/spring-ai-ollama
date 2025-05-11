@@ -10,7 +10,7 @@ spring:
     ollama:
       chat:
         options:
-          model: gemma3:1b
+          model: llama3.2:3b
 
   docker:
     compose:
