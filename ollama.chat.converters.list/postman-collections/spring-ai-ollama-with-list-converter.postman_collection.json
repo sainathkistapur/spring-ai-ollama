@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "37f4c42e-a6f2-4ec8-8a05-fe2828edcc9d",
+		"name": "spring-ai-ollama-with-list-converter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Simple-Prompt",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "List top 5 happiest countries in the world"
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/prompt/simple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"prompt",
+						"simple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prompt-With-List-Converter",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "List top 5 happiest countries in the world"
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/prompt/simple/with-list-converter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"prompt",
+						"simple",
+						"with-list-converter"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
