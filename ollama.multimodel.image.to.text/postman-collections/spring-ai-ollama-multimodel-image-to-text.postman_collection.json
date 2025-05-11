@@ -1,0 +1,31 @@
+{
+	"info": {
+		"_postman_id": "32b81f52-4738-4a42-a35a-3accfc83fbb9",
+		"name": "spring-ai-ollama-multimodel-image-to-text",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Image-To-Text",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/multimodel/image-to-text",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"multimodel",
+						"image-to-text"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

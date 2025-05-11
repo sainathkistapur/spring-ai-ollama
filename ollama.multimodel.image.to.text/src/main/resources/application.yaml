@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: springai.ollama.multimodel.image.to.text
+
+  threads:
+    virtual:
+      enabled: true
+
+  ai:
+    ollama:
+      chat:
+        options:
+          model: gemma3:4b
+
+  docker:
+    compose:
+      lifecycle-management: start-only
+
