@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "7a428367-5a85-4e42-9a81-b889616ea847",
+		"name": "spring-ai-ollama-chat-memory-in-memory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Chat-No-Memory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "conversationId",
+						"value": "CID-1",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "What is my name?"
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/chat/memory/in-memory/prompt-with-no-memory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"chat",
+						"memory",
+						"in-memory",
+						"prompt-with-no-memory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat-With-Memory",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "conversationId",
+						"value": "CID-2",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "What is my name?"
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/chat/memory/in-memory/prompt-with-in-memory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"chat",
+						"memory",
+						"in-memory",
+						"prompt-with-in-memory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
