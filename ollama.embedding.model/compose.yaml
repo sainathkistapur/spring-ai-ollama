@@ -1,0 +1,59 @@
+version: '3.9'
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    networks:
+      - app-net
+
+  ollama-init:
+    image: curlimages/curl:latest
+    container_name: ollama-init
+    depends_on:
+      - ollama
+    entrypoint: >
+      /bin/sh -c "
+        echo '[ollama-init] Waiting for Ollama to be ready...';
+        until curl -s http://ollama:11434/api/tags; do
+          sleep 2;
+        done;
+        echo '[ollama-init] Ollama is up!';
+        echo '[ollama-init] Pulling mxbai-embed-large model...';
+        curl -X POST http://ollama:11434/api/pull -d '{\"name\": \"mxbai-embed-large\"}' -H 'Content-Type: application/json';
+        echo '[ollama-init] mxbai-embed-large model pull complete.';
+        echo '[ollama-init] Pulling nomic-embed-text model...';
+        curl -X POST http://ollama:11434/api/pull -d '{\"name\": \"nomic-embed-text\"}' -H 'Content-Type: application/json';
+        echo '[ollama-init] nomic-embed-text model pull complete.';
+      "
+    networks:
+      - app-net
+    restart: "no"
+
+  ollama-check:
+    image: curlimages/curl:latest
+    depends_on:
+      - ollama
+    entrypoint: >
+      /bin/sh -c "
+        echo '[ollama-check] Verifying that mxbai-embed-large is available...';
+        until curl -s http://ollama:11434/api/tags | grep '\"name\": \"mxbai-embed-large\"'; do
+          echo '[ollama-check] mxbai-embed-large not found, retrying...';
+          sleep 2;
+        done;
+        echo '[ollama-check] mxbai-embed-large is successfully loaded in Ollama.';
+      "
+    networks:
+      - app-net
+    restart: "no"
+
+volumes:
+  ollama-data:
+
+networks:
+  app-net:
+    driver: bridge

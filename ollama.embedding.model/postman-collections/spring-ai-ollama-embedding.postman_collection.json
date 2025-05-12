@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "3ff1a7fc-5d6b-4ede-8444-9ba347d38388",
+		"name": "spring-ai-ollama-embedding",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Simple-Embedding",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Tell me a joke",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/embedding/simple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"embedding",
+						"simple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Custom-Embedding",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Tell me a joke",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/springai/ollama/embedding/custom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"springai",
+						"ollama",
+						"embedding",
+						"custom"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
