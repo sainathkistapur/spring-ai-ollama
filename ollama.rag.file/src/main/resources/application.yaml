@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: springai.ollama.rag.file
+
+  threads:
+    virtual:
+      enabled: true
+
+  ai:
+    ollama:
+      chat:
+        options:
+          model: llama3.2:3b
+      init:
+        pull-model-strategy: always
+
+
+  docker:
+    compose:
+      lifecycle-management: start-only
+
