@@ -1,6 +1,6 @@
 # spring-ai-ollama - RAG - ETL
 
-_**Note**: To keep the examples lightweight and easy to get quick response we are using the simplest model "**llama3.2:3b**"_
+_**Note**: To keep the examples lightweight and easy to get quick response we are using the simplest model "**mxbai-embed-large**"_
 
 Application to demonstrate the Spring AI - RAG - ETL functionality
 
@@ -28,7 +28,7 @@ We will be using
 mvn spring-boot:run
 ```
 - It takes a little time when you first start the application. 
-- When you **first run** the above command the application with pull the docker image of _Ollama_ and pull the _llama3.2:3b_ modal into Ollama.
+- When you **first run** the above command the application with pull the docker image of _Ollama_ and pull the _mxbai-embed-large_ modal into Ollama.
 - When the application is started you should be able to browser the pgVector database using the details provided in the ```compose.yaml``` file.
 
 
