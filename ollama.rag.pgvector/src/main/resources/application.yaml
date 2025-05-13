@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: springai.ollama.rag.pgvector
+
+  threads:
+    virtual:
+      enabled: true
+
+  ai:
+    ollama:
+      chat:
+        options:
+          model: llama3.2:3b
+      init:
+        pull-model-strategy: WHEN_MISSING
+        embedding:
+          include: true
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        initialize-schema: true
+        dimensions: 1024
+        batching-strategy: TOKEN_COUNT # Optional: Controls how documents are batched for embedding
+        max-document-batch-size: 10000 # Optional: Maximum number of documents per batch
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ragcontext
+    username: myuser
+    password: secret
+
+
+  docker:
+    compose:
+      lifecycle-management: start-and-stop
+      stop:
+        command: down
+        timeout: 1m
+
