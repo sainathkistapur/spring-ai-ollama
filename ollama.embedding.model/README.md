@@ -35,13 +35,3 @@ curl --location --request GET 'http://localhost:8080/springai/ollama/embedding/c
 --data-raw 'Tell me a joke'
 ```
 Response: Will be an embedded vector but this time generated using custom OpenAI model.
-
-### Ollama Cleanup - Run the following commands
-- `docker ps` - to identify Ollama container id
-- `docker exec -it <Ollama container id> sh` - to get into the Ollama docker container
-- `ollama list` - to get the list of model in the Ollama
-- `ollama rm mxbai-embed-large` - to delete the mxbai-embed-large model
-- `ollama rm nomic-embed-text` - to delete the nomic-embed-text model
-- `exit` - to exit the Ollama conatianer
-
-### Note: Make sure to run `docker-compose down` after you've finished with this module and want to run another module in this repository.
