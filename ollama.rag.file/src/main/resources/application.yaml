@@ -12,10 +12,14 @@ spring:
         options:
           model: llama3.2:3b
       init:
-        pull-model-strategy: always
-
+        pull-model-strategy: WHEN_MISSING
+        embedding:
+          include: true
 
   docker:
     compose:
-      lifecycle-management: start-only
+      lifecycle-management: start-and-stop
+      stop:
+        command: down
+        timeout: 1m
 

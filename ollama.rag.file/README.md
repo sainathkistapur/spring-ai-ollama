@@ -52,5 +52,3 @@ curl --location --request GET 'http://localhost:8080/springai/ollama/rag/file/wi
 Response:
 - This will give information from a Financial Overview table in the PDF.
 
-
-### Note: Make sure to run `docker-compose down` after you've finished with this module and want to run another module in this repository.
