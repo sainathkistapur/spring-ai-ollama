@@ -70,6 +70,3 @@ The below scenarios should only be used as coding examples as running these need
 - Scenario 3: Json-ETL-With-Transformer-And-Keyword-Metadata-Enricher - ETL Pipeline: Reader -> Transformer -> Transformer -> Writer
 - Scenario 4: Json-ETL-With-Transformer-And-Keyword-Metadata-And-Summary-Metadata-Enricher
 
-
-
-### Note: Make sure to run `docker-compose down` after you've finished with this module and want to run another module in this repository.
