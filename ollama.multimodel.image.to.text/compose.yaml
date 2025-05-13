@@ -11,43 +11,6 @@ services:
     networks:
       - app-net
 
-  ollama-init:
-    image: curlimages/curl:latest
-    container_name: ollama-init
-    depends_on:
-      - ollama
-    entrypoint: >
-      /bin/sh -c "
-        echo '[ollama-init] Waiting for Ollama to be ready...';
-        until curl -s http://ollama:11434/api/tags; do
-          sleep 2;
-        done;
-        echo '[ollama-init] Ollama is up!';
-        echo '[ollama-init] Pulling gemma3:4b model...';
-        curl -X POST http://ollama:11434/api/pull -d '{\"name\": \"gemma3:4b\"}' -H 'Content-Type: application/json';
-        echo '[ollama-init] gemma3:4b model pull complete.';
-      "
-    networks:
-      - app-net
-    restart: "no"
-
-  ollama-check:
-    image: curlimages/curl:latest
-    depends_on:
-      - ollama
-    entrypoint: >
-      /bin/sh -c "
-        echo '[ollama-check] Verifying that gemma3:4b is available...';
-        until curl -s http://ollama:11434/api/tags | grep '\"name\": \"gemma3\"'; do
-          echo '[ollama-check] gemma3 not found, retrying...';
-          sleep 2;
-        done;
-        echo '[ollama-check] gemma3 is successfully loaded in Ollama.';
-      "
-    networks:
-      - app-net
-    restart: "no"
-
 volumes:
   ollama-data:
 

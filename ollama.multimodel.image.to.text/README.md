@@ -24,12 +24,3 @@ curl --location --request GET 'http://localhost:8080/springai/ollama/multimodel/
 ```
 
 Response: you will get a description of the image that is sent in the prompt.
-
-### Ollama Cleanup - Run the following commands
-- `docker ps` - to identify Ollama container id
-- `docker exec -it <Ollama container id> sh` - to get into the Ollama docker container
-- `ollama list` - to get the list of model in the Ollama
-- `ollama rm gemma3:4b` - to delete the gemma3:4b model
-- `exit` - to exit the Ollama conatianer
-
-### Note: Make sure to run `docker-compose down` after you've finished with this module and want to run another module in this repository.
