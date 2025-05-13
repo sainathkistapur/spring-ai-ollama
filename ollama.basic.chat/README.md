@@ -25,8 +25,3 @@ curl --location --request GET 'http://localhost:8080/springai/ollama/basic-chat'
 OR you can use the postman collections provided in the project.
 
 You should get a response with details.
-
-
-
-### Note: Make sure to run `docker-compose down` after you've finished with this module and want to run another module in this repository.
-
