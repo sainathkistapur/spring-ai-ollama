@@ -11,8 +11,15 @@ spring:
       chat:
         options:
           model: llama3.2:3b
+      init:
+        pull-model-strategy: WHEN_MISSING
+        embedding:
+          include: false
 
   docker:
     compose:
-      lifecycle-management: start-only
+      lifecycle-management: start-and-stop
+      stop:
+        command: down
+        timeout: 1m
 
