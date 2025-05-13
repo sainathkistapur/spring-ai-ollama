@@ -55,5 +55,3 @@ curl --location --request GET 'http://localhost:8080/springai/ollama/chat/memory
 --data-raw 'What is my name?'
 ```
 Response: Your name is John.
-
-### Note: Make sure to run `docker-compose down` after you've finished with this module and want to run another module in this repository.
