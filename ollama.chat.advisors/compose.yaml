@@ -11,43 +11,6 @@ services:
     networks:
       - app-net
 
-  ollama-init:
-    image: curlimages/curl:latest
-    container_name: ollama-init
-    depends_on:
-      - ollama
-    entrypoint: >
-      /bin/sh -c "
-        echo '[ollama-init] Waiting for Ollama to be ready...';
-        until curl -s http://ollama:11434/api/tags; do
-          sleep 2;
-        done;
-        echo '[ollama-init] Ollama is up!';
-        echo '[ollama-init] Pulling llama3 model...';
-        curl -X POST http://ollama:11434/api/pull -d '{\"name\": \"llama3.2:3b\"}' -H 'Content-Type: application/json';
-        echo '[ollama-init] llama3 model pull complete.';
-      "
-    networks:
-      - app-net
-    restart: "no"
-
-  ollama-check:
-    image: curlimages/curl:latest
-    depends_on:
-      - ollama
-    entrypoint: >
-      /bin/sh -c "
-        echo '[ollama-check] Verifying that llama3 is available...';
-        until curl -s http://ollama:11434/api/tags | grep '\"name\": \"llama3\"'; do
-          echo '[ollama-check] llama3 not found, retrying...';
-          sleep 2;
-        done;
-        echo '[ollama-check] llama3 is successfully loaded in Ollama.';
-      "
-    networks:
-      - app-net
-    restart: "no"
-
 volumes:
   ollama-data:
 

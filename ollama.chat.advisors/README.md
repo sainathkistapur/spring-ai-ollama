@@ -71,5 +71,3 @@ curl --location --request GET 'http://localhost:8080/springai/ollama/advisors/sa
 --data-raw 'What is the capital of UK'
 ```
 You will see BEFORE and AFTER logs and also a response from the model
-
-### Note: Make sure to run `docker-compose down` after you've finished with this module and want to run another module in this repository.
