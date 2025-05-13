@@ -29,7 +29,7 @@ curl --location --request GET 'http://localhost:8080/springai/ollama/basic-chat/
 
 ##### Check the actuator endpoints
 List of available metrics:
-`http://localhost:8080/actuator/metrics/`
+`http://localhost:8080/actuator/metrics`
 
 You are particularly interested in these:
 
@@ -45,7 +45,4 @@ You are particularly interested in these:
 
 ##### Check the tracing on Zipkin
 
-`http://localhost:9411/zipkin/`
-
-
-### Note: Make sure to run `docker-compose down` after you've finished with this module and want to run another module in this repository.
+`http://localhost:9411/zipkin`
