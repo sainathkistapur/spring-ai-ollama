@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: springai.ollama.tool.calling
+
+  threads:
+    virtual:
+      enabled: true
+
+  ai:
+    ollama:
+      chat:
+        options:
+          model: llama3.2:3b
+      init:
+        pull-model-strategy: WHEN_MISSING
+        embedding:
+          include: false
+
+  docker:
+    compose:
+      lifecycle-management: start-and-stop
+      stop:
+        command: down
+        timeout: 1m
