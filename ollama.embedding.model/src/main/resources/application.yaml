@@ -15,6 +15,7 @@ spring:
         pull-model-strategy: WHEN_MISSING
         embedding:
           include: true
+          additional-models: [nomic-embed-text]
 
   docker:
     compose:
