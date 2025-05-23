@@ -15,6 +15,11 @@ spring:
         pull-model-strategy: WHEN_MISSING
         embedding:
           include: false
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
 
   docker:
     compose:
