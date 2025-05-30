@@ -2,7 +2,7 @@ package dev.springai.ollama.rag.file.config;
 
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.client.advisor.RetrievalAugmentationAdvisor;
+import org.springframework.ai.rag.advisor.RetrievalAugmentationAdvisor;
 import org.springframework.ai.rag.generation.augmentation.ContextualQueryAugmenter;
 import org.springframework.ai.rag.retrieval.search.VectorStoreDocumentRetriever;
 import org.springframework.ai.vectorstore.VectorStore;
@@ -19,18 +19,16 @@ public class OllamaConfig {
 
     @Bean
     RetrievalAugmentationAdvisor retrievalAugmentationAdvisor(VectorStore vectorStore) {
-        VectorStoreDocumentRetriever documentRetriever = VectorStoreDocumentRetriever.builder()
-                .vectorStore(vectorStore)
-                .build();
-
-        ContextualQueryAugmenter queryAugmenter = ContextualQueryAugmenter.builder()
-                .allowEmptyContext(true)
-                .build();
-
         return RetrievalAugmentationAdvisor.builder()
-                .documentRetriever(documentRetriever)
-                .queryAugmenter(queryAugmenter)
+                .documentRetriever(VectorStoreDocumentRetriever.builder()
+                        .vectorStore(vectorStore)
+                        .build())
+                .queryAugmenter(ContextualQueryAugmenter.builder()
+                        .allowEmptyContext(true)
+                        .build())
+
                 .build();
     }
+
 
 }
