@@ -51,9 +51,10 @@ public class RagContextSupplyController {
 
     @GetMapping("/with-rag-prompt-template")
     public String withRagPromptTemplate(@RequestBody String input) {
-        PromptTemplate promptTemplate = new PromptTemplate(PROMPT_STRING
-                , Map.of("input", input, "documents", getContextDataFromVectorStore(input)));
-
+        PromptTemplate promptTemplate =PromptTemplate.builder()
+                .template(PROMPT_STRING)
+                .variables(Map.of("input", input, "documents", getContextDataFromVectorStore(input)))
+                .build();
         return chatModel.call(promptTemplate.create()).getResult().getOutput().getText();
     }
 
